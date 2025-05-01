@@ -1,95 +1,178 @@
-* {
-    box-sizing: border-box;
-  }
-  
-  body {
-    font-family: Arial, Helvetica, sans-serif;
-    background-color: #e2dede;
-  }
-  
-  /* Style the header */
-  header {
-    background-color: #666;
-    padding: 30px;
-    text-align: center;
-    font-size: 35px;
-    color: white;
-  }
-  
-  /* Create two columns/boxes that floats next to each other */
-  nav {
-    float: left;
-    width: 30%;
-    height: 300px; /* only for demonstration, should be removed */
-    background: #ccc;
-    padding: 20px;
-  }
-  
-  /* Style the list inside the menu */
-  nav ul {
-    list-style-type: none;
-    padding: 0;
-  }
-  
-  article {
-    float: left;
-    padding: 20px;
-    width: 70%;
-    background-color: #000000;
-    height: 300px; /* only for demonstration, should be removed */
-  }
-  
-  /* Clear floats after the columns */
-  section::after {
-    content: "";
-    display: table;
-    clear: both;
-  }
-  
-  /* Style the footer */
-  footer {
-    background-color: #777;
-    padding: 10px;
-    text-align: center;
-    color: rgb(255, 255, 255);
-  }
-  
-  /* Responsive layout - makes the two columns/boxes stack on top of each other instead of next to each other, on small screens */
-  @media (max-width: 600px) {
-    nav, article {
-      width: 100%;
-      height: auto;
-    }
-  }
-  
-
-  body {
-    background-color: rgb(255, 255, 179);
-    font-family: Arial, sans-serif;
-}
-.tarjeta {
-    background-color: #FFF4A3;
-    padding: 20px;
-    margin: 20px;
-    border-radius: 10px;
-}
-.titulo {
-    font-size: 300%;
-    text-align: center;
-    color: rgb(0, 140, 255);
-}
-.principal {
-    color: rgb(62, 6, 73);
-    font-size: 250%;
-}
-.note {
-    font-size: 120%;
-    color: rgb(124, 14, 124);
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f7f7f7;
 }
 
+.encabezado {
+  background-color: black;
+  color: gold;
+  padding: 20px;
+  text-align: center;
+}
 
-  body {background-color: beige;}    
-h1   {font-size:300%;text-align:center;color: rgb(173, 59, 13);}
-p    {color: rgb(71, 28, 10);}
-h2.subtitulo  {font-size:300%;text-align:center;color: rgb(0, 0, 0);}
+.main-container {
+  min-height: 100vh;
+}
 
+.menu-lateral {
+  width: 250px;
+  background-color: black;
+  padding-top: 30px;
+}
+
+.menu-lateral ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.menu-lateral li {
+  margin-bottom: 20px;
+}
+
+.menu-lateral a {
+  color: gold;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 10px 20px;
+  display: block;
+}
+
+.contenido-principal {
+  flex-grow: 1;
+  padding: 30px;
+}
+
+.imagen-carousel {
+  max-height: 500px;
+  object-fit: cover;
+}
+
+.seccion-centrada {
+  text-align: center;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.seccion-centrada ul {
+  list-style: none;
+  padding: 0;
+}
+
+.seccion-centrada li {
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+footer {
+  background-color: #000;
+  color: #fff;
+  padding: 30px 15px;
+  margin-top: 40px;
+}
+
+.footer-contenedor {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+footer a {
+  color: white;
+  display: block;
+  text-decoration: none;
+  margin-top: 5px;
+}
+
+footer h3 {
+  margin-bottom: 10px;
+}
+
+.copyright {
+  text-align: center;
+  padding-top: 20px;
+  border-top: 1px solid #ffffff;
+  margin-top: 20px;
+}
+/* Efecto especial en la primera línea de los párrafos */
+p::first-line {
+  color: gold;
+  font-variant: small-caps;
+}
+/* Estilos para galería */
+.galeria-contenedor {
+  padding: 40px 20px;
+  background-color: #f9f9f9;
+}
+
+.titulo-galeria {
+  text-align: center;
+  font-size: 32px;
+  margin-bottom: 10px;
+  color: #d4af37; /* dorado */
+}
+
+.intro-galeria {
+  text-align: center;
+  font-size: 16px;
+  color: #333;
+  margin-bottom: 30px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+div.gallery {
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  background-color: white;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+div.gallery:hover {
+  border: 1px solid #777;
+  transform: scale(1.02);
+}
+
+div.gallery img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+div.desc {
+  padding: 15px;
+  text-align: center;
+  font-size: 14px;
+  color: #444;
+}
+
+.responsive {
+  padding: 0 6px;
+  float: left;
+  width: 24.99999%;
+  margin-bottom: 20px;
+}
+
+.clearfix::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive design */
+@media only screen and (max-width: 700px) {
+  .responsive {
+    width: 49.99999%;
+    margin: 6px 0;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .responsive {
+    width: 100%;
+  }
+}
